@@ -11,9 +11,12 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/73dba47a23.js"
       crossorigin="anonymous"
@@ -25,19 +28,25 @@
     <div class="container">
       <div class="row">
         <div class="col-6">
-            <form id="city-search">
-                <input type="text" autocomplete="off" autofocus="on" placeholder="City" id="city-input"/>
-                <input type="submit" value="Search"/>
-                <button id="current-location-button">Current Location</button>
-            </form>
-            
+          <form id="city-search">
+            <input
+              type="text"
+              autocomplete="off"
+              autofocus="on"
+              placeholder="City"
+              id="city-input"
+            />
+            <input type="submit" value="Search" />
+            <button id="current-location-button">Current Location</button>
+          </form>
         </div>
-
       </div>
 
       <div class="row">
         <div class="col">
-          <h1 class="text" id="location-header">Please Enter a City or Select Current Location</h1>
+          <h1 class="text" id="location-header">
+            Please Enter a City or Select Current Location
+          </h1>
         </div>
       </div>
 
@@ -52,17 +61,35 @@
 
       <div class="row">
         <div class="col-sm-3">
-          <h2 class="text"><span id="daily-temp"></span><span class="temp-units"><a href="" class="temp-unit" id="celsius-link">°C</a>|<a href="" class="temp-unit" id="fahrenheit-link">°F</a></span></h2>
+          <h2 class="text">
+            <span id="daily-temp"></span
+            ><span class="temp-units"
+              ><a href="" class="temp-unit" id="celsius-link">°C</a>|<a
+                href=""
+                class="temp-unit"
+                id="fahrenheit-link"
+                >°F</a
+              ></span
+            >
+          </h2>
         </div>
-        
+
         <div class="col-sm-6 weather-stats">
           <h3 class="text"><span id="humidity"></span></h3>
           <h3 class="text"><span id="wind-speed"></span></h3>
         </div>
       </div>
-
-        </div>
-      </div>
+    </div>
+    <div class="open-source-footer">
+      <p>
+        <a
+          href="https://github.com/hanoconnor/shecodes-weather-app"
+          target="_blank"
+          class="footer-link"
+          >Open-source code</a
+        >
+        by Han O'Connor
+      </p>
     </div>
     <script src="app.js"></script>
   </body>

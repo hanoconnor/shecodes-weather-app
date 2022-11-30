@@ -37,6 +37,9 @@ a {
   color: slategray;
 }
 
+.open-source-footer {
+  text-align: center;
+}
 /* .card {
   text-align: center;
   margin: 20px auto;
