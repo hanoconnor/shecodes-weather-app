@@ -1,0 +1,57 @@
+a {
+  text-decoration: none;
+}
+
+.container {
+  border: 1px solid slategray;
+  border-radius: 5px;
+  display: block;
+  margin: 20px auto;
+}
+
+.row {
+  margin: 15px;
+}
+
+.text {
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+#daily-temp {
+  font-size: 4rem;
+  color: slategray;
+}
+
+.temp-units {
+  color: slategray;
+}
+
+.today-icon {
+  font-size: 4rem;
+  color: gold;
+  margin: 5px;
+}
+
+.weather-stats {
+  font-size: 2rem;
+  color: slategray;
+}
+
+/* .card {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.day {
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.card-icon {
+  font-size: 4rem;
+  color: gold;
+}
+
+.card-temp {
+  color: slategray;
+  font-family: "Montserrat Alternates", sans-serif;
+} */
