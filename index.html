@@ -25,58 +25,60 @@
     <title>SheCodes Weather App</title>
   </head>
   <body>
-    <div class="container">
+    <div class="app-container">
       <div class="row">
-        <div class="col-6">
+        <div class="col-9">
           <form id="city-search">
             <input
+              class="form-control"
               type="text"
               autocomplete="off"
               autofocus="on"
               placeholder="City"
               id="city-input"
             />
-            <input type="submit" value="Search" />
-            <button id="current-location-button">Current Location</button>
+            </div>
+            <div class="col-3">
+            <input type="submit" value="Search" class="btn btn-primary" />
+            <button id="current-location-button" class="btn btn-primary">
+              Location
+            </button>
+            </div>
           </form>
-        </div>
+        
+      </div>
+
+      <div class="overview-container">
+        <h1 class="text" id="location-header" class="location-h1">
+          Select Location
+        </h1>
+        <ul>
+          <li class="text" id="day-time"></li>
+          <li class="text" id="weather-description"></li>
+        </ul>
       </div>
 
       <div class="row">
-        <div class="col">
-          <h1 class="text" id="location-header">
-            Please Enter a City or Select Current Location
-          </h1>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-3">
-          <h2 class="text" id="day-time"></h2>
-        </div>
-        <div class="col-3">
-          <h2 class="text" id="weather-description"></h2>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <h2 class="text">
-            <span id="daily-temp"></span
-            ><span class="temp-units"
-              ><a href="" class="temp-unit" id="celsius-link">°C</a>|<a
-                href=""
-                class="temp-unit"
-                id="fahrenheit-link"
-                >°F</a
-              ></span
-            >
-          </h2>
+        <div class="d-flex flex-wrap col-6">
+          <p>
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
+            alt="weather icon"
+            class="weather-icon align-top"
+          />
+          <span id="daily-temp"></span>
+          <span class="temp-units align-top"
+            ><a href="" class="temp-unit" id="celsius-link"> °C </a>|
+            <a href="" class="temp-unit" id="fahrenheit-link">°F</a></span
+          >
+          </p>
         </div>
 
-        <div class="col-sm-6 weather-stats">
-          <h3 class="text"><span id="humidity"></span></h3>
-          <h3 class="text"><span id="wind-speed"></span></h3>
+        <div class=" d-flex flex-wrap col-6 weather-stats">
+          <ul>
+            <li class="text"><span id="humidity"></span></li>
+            <li class="text"><span id="wind-speed"></span></li>
+          </ul>
         </div>
       </div>
     </div>

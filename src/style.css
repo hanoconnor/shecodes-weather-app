@@ -1,45 +1,70 @@
-a {
-  text-decoration: none;
-}
-
-.container {
-  border: 1px solid slategray;
-  border-radius: 5px;
-  display: block;
-  margin: 20px auto;
-}
-
-.row {
-  margin: 15px;
-}
-
-.text {
+body {
   font-family: "Montserrat Alternates", sans-serif;
 }
 
-#daily-temp {
-  font-size: 4rem;
+h1 {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: slateblue;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+  font-size: 1.5rem;
   color: slategray;
+}
+
+.app-container {
+  border: 1px solid slategray;
+  border-radius: 10px;
+  display: block;
+  margin: 40px auto;
+  max-width: 90%;
+  padding: 20px;
+}
+
+.btn {
+  background-color: slateblue;
+  border: slateblue;
+  margin-right: 10.5px;
+}
+
+.overview-container {
+  margin: 40px;
+}
+
+.row {
+  margin: 30px;
+}
+
+.weather-icon {
+  margin-right: 15px;
+  height: 64px;
+  width: 64px;
+}
+
+#daily-temp {
+  color: black;
+  font-size: 64px;
+  line-height: 1;
 }
 
 .temp-units {
   color: slategray;
-}
-
-.today-icon {
-  font-size: 4rem;
-  color: gold;
-  margin: 5px;
-}
-
-.weather-stats {
-  font-size: 2rem;
-  color: slategray;
+  font-size: 1.5rem;
 }
 
 .open-source-footer {
   text-align: center;
 }
+
 /* .card {
   text-align: center;
   margin: 20px auto;
