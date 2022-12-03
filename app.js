@@ -38,7 +38,6 @@ function getPosition(e) {
 }
 
 function updateTemp(response) {
-  console.log(response.data);
   let temp = Math.round(response.data.main.temp);
   let location = response.data.name;
   let windSpeed = Math.round(response.data.wind.speed);
@@ -52,6 +51,7 @@ function updateTemp(response) {
   windMph.innerHTML = `Wind Speed: ${windSpeed} km/h`;
   humidityPercent.innerHTML = `Humidity: ${humidity}%`;
   weatherIconMain.setAttribute("src", iconUrl);
+  weatherIconMain.setAttribute("alt", descriptionMain);
 
   // Temperature Conversion functions
 
