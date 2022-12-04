@@ -43,14 +43,15 @@ function updateTemp(response) {
   let windSpeed = Math.round(response.data.wind.speed);
   let descriptionMain = response.data.weather[0].main;
   let humidity = response.data.main.humidity;
-  let iconCode = response.data.weather[0].icon;
-  let iconUrl = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
   locationHeader.innerHTML = location;
   weatherDescription.innerHTML = descriptionMain;
   dailyTemp.innerHTML = temp;
   windMph.innerHTML = `Wind Speed: ${windSpeed} km/h`;
   humidityPercent.innerHTML = `Humidity: ${humidity}%`;
-  weatherIconMain.setAttribute("src", iconUrl);
+  weatherIconMain.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   weatherIconMain.setAttribute("alt", descriptionMain);
 
   // Temperature Conversion functions
