@@ -108,3 +108,29 @@ function formatDate(date) {
 
 let currentTime = new Date();
 dayTimeField.innerHTML = formatDate(currentTime);
+
+// Forecast function
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+   <div class="col-2">
+          <div class="card">
+            <span class="forecast-day-title">${day}</span>
+            <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="forecast-icon" class="card-icon" id="card-icon-1">
+            <div class="forecast-temps">
+              <span class="forecast-max-temp">18°</span> | <span class="forecast-min-temp">10°</span>
+            </div>
+          </div>
+        </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();

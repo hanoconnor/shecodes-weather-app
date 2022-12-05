@@ -72,21 +72,24 @@ li {
   text-transform: capitalize;
 }
 
-/* .card {
+.card {
+  border: none;
   text-align: center;
   margin: 20px auto;
+  display: flex;
+  align-items: center;
+  color: slategray;
 }
 
-.day {
-  font-family: "Montserrat Alternates", sans-serif;
+.forecast-day-title {
+  font-size: 1.5rem;
 }
 
 .card-icon {
-  font-size: 4rem;
-  color: gold;
+  width: 60px;
 }
 
-.card-temp {
-  color: slategray;
-  font-family: "Montserrat Alternates", sans-serif;
-} */
+.forecast-temps {
+  font-size: 1rem;
+  opacity: 0.8;
+}
