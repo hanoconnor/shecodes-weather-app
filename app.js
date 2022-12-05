@@ -59,12 +59,16 @@ function updateTemp(response) {
   function displayCelsius(e) {
     e.preventDefault();
     dailyTemp.innerHTML = temp;
+    fahrenheit.classList.remove("active");
+    celsius.classList.add("active");
   }
 
   function displayFahrenheit(e) {
     e.preventDefault();
     let fahrenheitTemp = Math.round(temp * 1.8 + 32);
     dailyTemp.innerHTML = fahrenheitTemp;
+    celsius.classList.remove("active");
+    fahrenheit.classList.add("active");
   }
 
   let celsius = document.querySelector("#celsius-link");

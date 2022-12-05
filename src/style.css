@@ -59,6 +59,11 @@ li {
   font-size: 1.5rem;
 }
 
+.temp-units .active {
+  color: black;
+  cursor: default;
+}
+
 .open-source-footer {
   text-align: center;
 }
