@@ -75,6 +75,7 @@ function updateTemp(response) {
     dailyTemp.innerHTML = temp;
     fahrenheit.classList.remove("active");
     celsius.classList.add("active");
+    windMph.innerHTML = `Wind Speed: ${windSpeed} km/h`;
     units = "metric";
     getUpdatedForecastUnits(response.data.coord);
   }
@@ -85,6 +86,8 @@ function updateTemp(response) {
     dailyTemp.innerHTML = fahrenheitTemp;
     celsius.classList.remove("active");
     fahrenheit.classList.add("active");
+    let imperialWindSpeed = Math.round(windSpeed * 0.621371)
+    windMph.innerHTML = `Wind Speed: ${imperialWindSpeed} mph`;
     units = "imperial";
     getUpdatedForecastUnits(response.data.coord);
   }
