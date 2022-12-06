@@ -88,11 +88,10 @@ li {
 
 .forecast-temps {
   font-size: 1rem;
-  opacity: 0.8;
 }
 
 .forecast-min-temp {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .open-source-footer {
