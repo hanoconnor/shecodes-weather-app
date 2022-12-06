@@ -57,7 +57,7 @@ function updateTemp(response) {
   let humidity = response.data.main.humidity;
   let timestamp = response.data.dt;
   let lastUpdateTime = formatLastUpdatedTime(timestamp)
-  dayTimeField.innerHTML = `Last Updated: ${lastUpdateTime}`;
+  dayTimeField.innerHTML = `Last Update: ${lastUpdateTime}`;
   locationHeader.innerHTML = location;
   weatherDescription.innerHTML = descriptionMain;
   dailyTemp.innerHTML = temp;
@@ -146,15 +146,7 @@ function formatLastUpdatedTime(timestamp) {
   let milliseconds = new Date(timestamp * 1000);
 
   let dayIndex = milliseconds.getDay();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let day = days[dayIndex];
 
   let hours = milliseconds.getHours();
