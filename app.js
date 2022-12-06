@@ -37,8 +37,15 @@ function getPosition(e) {
   });
 }
 
+// Get 5 day forecast functions
+
 function getForecast(coordinates) {
   let forecastApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(forecastApiUrl).then(displayForecast);
+}
+
+function getUpdatedForecastUnits(coordinates) {
+  let forecastApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
   axios.get(forecastApiUrl).then(displayForecast);
 }
 
@@ -68,6 +75,8 @@ function updateTemp(response) {
     dailyTemp.innerHTML = temp;
     fahrenheit.classList.remove("active");
     celsius.classList.add("active");
+    units = "metric";
+    getUpdatedForecastUnits(response.data.coord);
   }
 
   function displayFahrenheit(e) {
@@ -76,6 +85,8 @@ function updateTemp(response) {
     dailyTemp.innerHTML = fahrenheitTemp;
     celsius.classList.remove("active");
     fahrenheit.classList.add("active");
+    units = "imperial";
+    getUpdatedForecastUnits(response.data.coord);
   }
 
   let celsius = document.querySelector("#celsius-link");
