@@ -56,8 +56,10 @@ function updateTemp(response) {
   let descriptionMain = response.data.weather[0].main;
   let humidity = response.data.main.humidity;
   let timestamp = response.data.dt;
-  let lastUpdateTime = formatLastUpdatedTime(timestamp)
-  dayTimeField.innerHTML = `Last Update: ${lastUpdateTime}`;
+  let localTimeZone = response.data.timezone;
+  let localTimestamp = timestamp + localTimeZone;
+  let lastUpdateLocalTime = formatLastUpdatedTime(localTimestamp)
+  dayTimeField.innerHTML = `Last Update: ${lastUpdateLocalTime}`;
   locationHeader.innerHTML = location;
   weatherDescription.innerHTML = descriptionMain;
   dailyTemp.innerHTML = temp;
