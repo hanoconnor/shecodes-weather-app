@@ -25,9 +25,9 @@
     <title>SheCodes Weather App</title>
   </head>
   <body>
-    <div class="app-container">
+    <div class="container app-container">
       <div class="row">
-        <div class="col-9">
+        <div class="col-12 col-md-9">
           <form id="city-search">
             <input
               class="form-control"
@@ -38,7 +38,7 @@
               id="city-input"
             />
             </div>
-            <div class="col-3">
+            <div class="col-12 col-md-3">
             <input type="submit" value="Search" class="btn btn-primary" />
             <button id="current-location-button" class="btn btn-primary">
               Location
@@ -48,7 +48,7 @@
         
       </div>
 
-      <div class="overview-container">
+      <div class=" container overview-container">
         <h1 class="text" id="location-header" class="location-h1">
           Select Location
         </h1>
@@ -57,33 +57,34 @@
           <li class="text" id="weather-description"></li>
         </ul>
       </div>
+      <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <p>
+              <img
+                src="https://openweathermap.org/img/wn/02d@2x.png"
+                alt="weather icon"
+                class="weather-icon align-top"
+                id = "weather-icon-main"
+              />
+              <span id="daily-temp"></span>
+              <span class="temp-units align-top"
+                ><a href="" class="temp-unit active" id="celsius-link"> °C </a>|
+                <a href="" class="temp-unit" id="fahrenheit-link">°F</a></span
+              >
+              </p>
+            </div>
 
-      <div class="row">
-        <div class="d-flex flex-wrap col-6">
-          <p>
-          <img
-            src="https://openweathermap.org/img/wn/02d@2x.png"
-            alt="weather icon"
-            class="weather-icon align-top"
-            id = "weather-icon-main"
-          />
-          <span id="daily-temp"></span>
-          <span class="temp-units align-top"
-            ><a href="" class="temp-unit active" id="celsius-link"> °C </a>|
-            <a href="" class="temp-unit" id="fahrenheit-link">°F</a></span
-          >
-          </p>
-        </div>
-
-        <div class="d-flex flex-wrap col-6 weather-stats">
-          <ul>
-            <li class="text"><span id="humidity"></span></li>
-            <li class="text"><span id="wind-speed"></span></li>
-          </ul>
-        </div>
+            <div class="col-12 col-md-6 weather-stats">
+              <ul>
+                <li class="text"><span id="humidity"></span></li>
+                <li class="text"><span id="wind-speed"></span></li>
+              </ul>
+            </div>
+          </div>
       </div>
 
-    <div class="weather-forecast" id="forecast">
+    <div class="container weather-forecast" id="forecast">
     </div>
 
     </div>
