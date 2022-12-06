@@ -37,7 +37,7 @@ function getPosition(e) {
   });
 }
 
-// Get 5 day forecast functions
+// Get next 5 day forecast functions
 
 function getForecast(coordinates) {
   let forecastApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
@@ -55,6 +55,9 @@ function updateTemp(response) {
   let windSpeed = Math.round(response.data.wind.speed);
   let descriptionMain = response.data.weather[0].main;
   let humidity = response.data.main.humidity;
+  let timestamp = response.data.dt;
+  let lastUpdateTime = formatLastUpdatedTime(timestamp)
+  dayTimeField.innerHTML = `Last Updated: ${lastUpdateTime}`;
   locationHeader.innerHTML = location;
   weatherDescription.innerHTML = descriptionMain;
   dailyTemp.innerHTML = temp;
@@ -68,7 +71,7 @@ function updateTemp(response) {
 
   getForecast(response.data.coord);
 
-  // Temperature Conversion functions
+  // Temperature/Unit Conversion functions
 
   function displayCelsius(e) {
     e.preventDefault();
@@ -130,19 +133,45 @@ function formatDate(date) {
 let currentTime = new Date();
 dayTimeField.innerHTML = formatDate(currentTime);
 
-// Format Forecast Day Function
+// Format Forecast Last Updated Day/Time and Forecast Day Functions
 
 function formatDay(timestamp) {
-  let date = new Date(timestamp * 1000);
-  let day = date.getDay();
+  let milliseconds = new Date(timestamp * 1000);
+  let day =  milliseconds.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return days[day];
+}
+
+function formatLastUpdatedTime(timestamp) {
+  let milliseconds = new Date(timestamp * 1000);
+
+  let dayIndex = milliseconds.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[dayIndex];
+
+  let hours = milliseconds.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let mins = milliseconds.getMinutes();
+  if (mins < 10) {
+    mins = `0${mins}`;
+  }
+  let time = `${hours}:${hours}`
+  return `${day} ${time}`;
 }
 
 // Display Forecast function
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
