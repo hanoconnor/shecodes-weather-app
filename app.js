@@ -57,8 +57,7 @@ function updateTemp(response) {
   let humidity = response.data.main.humidity;
   let timestamp = response.data.dt;
   let localTimeZone = response.data.timezone;
-  let localTimestamp = timestamp + localTimeZone;
-  let lastUpdateLocalTime = formatLastUpdatedTime(localTimestamp)
+  let lastUpdateLocalTime = formatLastUpdatedTime(timestamp, localTimeZone)
   dayTimeField.innerHTML = `Last Update: ${lastUpdateLocalTime}`;
   locationHeader.innerHTML = location;
   weatherDescription.innerHTML = descriptionMain;
@@ -144,18 +143,20 @@ function formatDay(timestamp) {
   return days[day];
 }
 
-function formatLastUpdatedTime(timestamp) {
-  let milliseconds = new Date(timestamp * 1000);
+function formatLastUpdatedTime(timestamp, timezone) {
+  let timestampMilliseconds = timestamp * 1000;
+  let timezoneMilliseconds = timezone * 1000;
+  let localTimestamp = new Date(timestampMilliseconds + timezoneMilliseconds);
 
-  let dayIndex = milliseconds.getDay();
+  let dayIndex = localTimestamp.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let day = days[dayIndex];
 
-  let hours = milliseconds.getHours();
+  let hours = localTimestamp.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  let mins = milliseconds.getMinutes();
+  let mins = localTimestamp.getMinutes();
   if (mins < 10) {
     mins = `0${mins}`;
   }
